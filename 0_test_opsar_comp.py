@@ -1,21 +1,17 @@
 import harvest_plet
-from harvest_plet import ospar_comp
-
-print(help(harvest_plet))
 print(harvest_plet.__version__)
-
+from harvest_plet import ospar_comp
 comp_regions = ospar_comp.OSPARRegions()
-
-# test id retrieval
 id_list = comp_regions.get_all_ids()
 
+# print all items
 for item in id_list:
     print(item)
 
-# individual COMP area plot
+# plot a region
 comp_regions.plot_map("SNS")
 
-# plot all COMP areas
+# plot all regions
 comp_regions.plot_map()
 
 # test WKT
